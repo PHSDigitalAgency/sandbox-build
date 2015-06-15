@@ -47,10 +47,10 @@ sonata_page:
 
     assets:
         stylesheets:
-            - assetic/sonata_front_css.css
+            - assets/front/css/styles.css
 
         javascripts:
-            - assetic/sonata_front_js.js
+            - assets/front/scripts.js
 
     default_template: default
     templates:

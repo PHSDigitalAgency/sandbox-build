@@ -155,18 +155,17 @@ assetic:
                 - %kernel.root_dir%/../web/bundles/sonatacore/js/base.js
                 - %kernel.root_dir%/../web/bundles/sonatacore/vendor/select2/select2.min.js
                 - %kernel.root_dir%/../web/bundles/sonatademo/js/demo.js
-
+            output: assets/front/js/scripts.js
             filters:
                 - uglifyjs2
 
         sonata_front_css:
             inputs:
-                # - %kernel.root_dir%/../web/bundles/sonatacore/vendor/bootstrap/dist/css/bootstrap.min.css
                 - %kernel.root_dir%/../web/bundles/app/vendor/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss
                 - %kernel.root_dir%/../web/bundles/sonatacore/vendor/select2/select2.css
                 - %kernel.root_dir%/../web/bundles/mopabootstrap/css/datepicker.css
                 - %kernel.root_dir%/../web/bundles/sonatademo/css/demo.css
-            output: assetic/sonata_front_css.css
+            output: assets/front/css/styles.css
             filters:
                 - cssrewrite
                 - uglifycss
