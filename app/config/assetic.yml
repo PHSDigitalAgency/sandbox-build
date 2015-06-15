@@ -131,15 +131,26 @@ assetic:
                 - %kernel.root_dir%/../web/bundles/sonataadmin/css/layout.css
                 - %kernel.root_dir%/../web/bundles/sonataadmin/css/tree.css
                 - %kernel.root_dir%/../web/bundles/sonatapage/sonata-page.back.css
-
+            output: assetic/sonata_admin_css.css
             filters:
                 - cssrewrite
                 - uglifycss
 
         sonata_front_js:
             inputs:
-                - %kernel.root_dir%/../web/bundles/sonatacore/vendor/jquery/dist/jquery.js
-                - %kernel.root_dir%/../web/bundles/sonatacore/vendor/bootstrap/dist/js/bootstrap.js
+                - %kernel.root_dir%/../web/bundles/app/vendor/jquery/dist/jquery.js
+                - %kernel.root_dir%/../web/bundles/app/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js
+                - %kernel.root_dir%/../web/bundles/app/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js
+                - %kernel.root_dir%/../web/bundles/app/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js
+                - %kernel.root_dir%/../web/bundles/app/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js
+                - %kernel.root_dir%/../web/bundles/app/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/button.js
+                - %kernel.root_dir%/../web/bundles/app/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js
+                - %kernel.root_dir%/../web/bundles/app/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js
+                - %kernel.root_dir%/../web/bundles/app/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js
+                - %kernel.root_dir%/../web/bundles/app/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js
+                - %kernel.root_dir%/../web/bundles/app/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js
+                - %kernel.root_dir%/../web/bundles/app/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js
+                - %kernel.root_dir%/../web/bundles/app/vendor/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js
                 - %kernel.root_dir%/../web/bundles/sonataproduct/js/product.js
                 - %kernel.root_dir%/../web/bundles/sonatacore/js/base.js
                 - %kernel.root_dir%/../web/bundles/sonatacore/vendor/select2/select2.min.js
@@ -150,11 +161,12 @@ assetic:
 
         sonata_front_css:
             inputs:
-                - %kernel.root_dir%/../web/bundles/sonatacore/vendor/bootstrap/dist/css/bootstrap.min.css
+                # - %kernel.root_dir%/../web/bundles/sonatacore/vendor/bootstrap/dist/css/bootstrap.min.css
+                - %kernel.root_dir%/../web/bundles/app/vendor/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss
                 - %kernel.root_dir%/../web/bundles/sonatacore/vendor/select2/select2.css
                 - %kernel.root_dir%/../web/bundles/mopabootstrap/css/datepicker.css
                 - %kernel.root_dir%/../web/bundles/sonatademo/css/demo.css
-
+            output: assetic/sonata_front_css.css
             filters:
                 - cssrewrite
                 - uglifycss

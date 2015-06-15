@@ -1,0 +1,26 @@
+{
+  "name": "PHSSonata",
+  "version": "0.1",
+  "homepage": "https://github.com/PHSDigitalAgency/sandbox-build",
+  "authors": [
+    "Yves-Marie Trublin <yves@phsvietnam.com>"
+  ],
+  "description": "Fork of Sonata project",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "Resources/public/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.4",
+    "flexslider": "~2.5.0",
+    "fontawesome": "~4.3.0"
+  }
+}
