@@ -12,6 +12,8 @@
 require_once __DIR__ . '/../app/bootstrap.php.cache';
 require_once __DIR__ . '/../app/AppKernel.php';
 
+umask(0002);
+
 $request = Sonata\PageBundle\Request\RequestFactory::createFromGlobals('host_with_path');
 
 $kernel = new AppKernel('prod', false);

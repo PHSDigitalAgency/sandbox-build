@@ -96,13 +96,13 @@ if (!function_exists('curl_init')) {
     $checks[] = array('OK', "curl extension is available");
 }
 
-if (!extension_loaded('xdebug')) {
-    $checks[] = array('KO', "xdebug is not available");
-}else if (extension_loaded('xdebug') && ini_get('xdebug.max_nesting_level') < 255) {
-    $checks[] = array('KO', "xdebug.max_nesting_level is too low, please make sure the value is greater than 255");
-} else {
-    $checks[] = array('OK', "xdebug is available");
-}
+// if (!extension_loaded('xdebug')) {
+//     $checks[] = array('KO', "xdebug is not available");
+// }else if (extension_loaded('xdebug') && ini_get('xdebug.max_nesting_level') < 255) {
+//     $checks[] = array('KO', "xdebug.max_nesting_level is too low, please make sure the value is greater than 255");
+// } else {
+//     $checks[] = array('OK', "xdebug is available");
+// }
 
 $error = 0;
 
