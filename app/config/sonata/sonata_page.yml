@@ -50,7 +50,7 @@ sonata_page:
             - assets/front/css/styles.css
 
         javascripts:
-            - assets/front/scripts.js
+            - assets/front/js/scripts.js
 
     default_template: default
     templates:
