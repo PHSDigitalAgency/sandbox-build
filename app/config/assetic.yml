@@ -4,11 +4,19 @@ assetic:
     read_from:      %kernel.root_dir%/../web
     write_to:       %kernel.root_dir%/../web
     bundles:        [] # disable bundles parsing
+    node: /usr/bin/nodejs
+    node_paths: [/usr/lib/node_modules/]
 
     filters:
         cssrewrite: ~
-        yui_js:  { jar: "%kernel.root_dir%/../bin/yuicompressor.jar" }
-        yui_css: { jar: "%kernel.root_dir%/../bin/yuicompressor.jar" }
+        uglifyjs2: { bin: /usr/bin/uglifyjs }
+        uglifycss: { bin: /usr/bin/uglifycss }
+        less:
+          bin: /usr/bin/less
+          apply_to:   "\.less$"
+        compass:
+            bin: /usr/local/bin/compass
+            apply_to:   "\.scss$"
 
     assets:
         # see https://sonata-project.org/blog/2012/5/15/assetic-package-configuration
@@ -52,7 +60,7 @@ assetic:
 #                - %kernel.root_dir%/../web/bundles/sonataadmin/vendor/jqueryui/ui/i18n/jquery-ui-i18n.js
 
             filters:
-                - yui_js
+                - uglifyjs2
 
         sonata_jqueryui_css:
             inputs:
@@ -60,7 +68,7 @@ assetic:
 
             filters:
                 - cssrewrite
-                - yui_css
+                - uglifycss
 
         sonata_formatter_js:
             inputs:
@@ -72,7 +80,7 @@ assetic:
                 - %kernel.root_dir%/../web/bundles/sonataformatter/markitup/sets/textile/set.js
 
             filters:
-                - yui_js
+                - uglifyjs2
 
         sonata_formatter_css:
             inputs:
@@ -83,7 +91,7 @@ assetic:
 
             filters:
                 - cssrewrite
-                - yui_css
+                - uglifycss
 
         sonata_admin_js:
             inputs:
@@ -92,8 +100,8 @@ assetic:
 #                - %kernel.root_dir%/../web/bundles/sonataadmin/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js
                 - %kernel.root_dir%/../web/bundles/sonatacore/vendor/moment/min/moment.min.js
                 - %kernel.root_dir%/../web/bundles/sonatacore/vendor/bootstrap/dist/js/bootstrap.js
-                - %kernel.root_dir%/../web/bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js
-                - %kernel.root_dir%/../web/bundles/sonataadmin/jquery/form/jquery.form.js
+                - %kernel.root_dir%/../web/bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js
+                - %kernel.root_dir%/../web/bundles/sonataadmin/vendor/jquery-form/jquery.form.js
                 - %kernel.root_dir%/../web/bundles/sonataadmin/jquery/jquery.confirmExit.js
                 - %kernel.root_dir%/../web/bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/js/bootstrap-editable.js
                 - %kernel.root_dir%/../web/bundles/sonatacore/vendor/select2/select2.js
@@ -105,7 +113,7 @@ assetic:
                 - %kernel.root_dir%/../web/bundles/sonataadmin/treeview.js
 
             filters:
-                - yui_js
+                - uglifyjs2
 
         sonata_admin_css:
             inputs:
@@ -118,7 +126,7 @@ assetic:
                 - %kernel.root_dir%/../web/bundles/sonatacore/vendor/select2/select2.css
                 - %kernel.root_dir%/../web/bundles/sonatacore/vendor/select2/select2-bootstrap.css
                 - %kernel.root_dir%/../web/bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css
-                - %kernel.root_dir%/../web/bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css
+                - %kernel.root_dir%/../web/bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/src/less/bootstrap-datetimepicker-build.less
                 - %kernel.root_dir%/../web/bundles/sonataadmin/css/styles.css
                 - %kernel.root_dir%/../web/bundles/sonataadmin/css/layout.css
                 - %kernel.root_dir%/../web/bundles/sonataadmin/css/tree.css
@@ -126,7 +134,7 @@ assetic:
 
             filters:
                 - cssrewrite
-                - yui_css
+                - uglifycss
 
         sonata_front_js:
             inputs:
@@ -138,7 +146,7 @@ assetic:
                 - %kernel.root_dir%/../web/bundles/sonatademo/js/demo.js
 
             filters:
-                - yui_js
+                - uglifyjs2
 
         sonata_front_css:
             inputs:
@@ -149,4 +157,4 @@ assetic:
 
             filters:
                 - cssrewrite
-                - yui_css
+                - uglifycss
